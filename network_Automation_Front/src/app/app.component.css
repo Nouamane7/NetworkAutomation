@@ -1,0 +1,14 @@
+#app-container {
+  display: flex;
+  
+}
+#search-bar-flex {
+  display: flex;
+  flex-direction: column;
+  background: whitesmoke;
+}
+app-search-bar{
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}

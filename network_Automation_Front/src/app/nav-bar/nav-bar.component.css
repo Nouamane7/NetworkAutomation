@@ -1,0 +1,108 @@
+#nav-bar-container {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 70px);
+    position: sticky;
+    top: 70px;
+}
+
+
+
+#content-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    padding: 0.5rem 0rem 0.5rem 1rem;
+    width: 170px;
+    border-right: 1px solid rgb(43, 43, 43);
+    box-shadow: 10px 0 10px -5px rgba(0, 0, 0, 0.5);
+    
+    /* margin-top: 30px; */
+}
+
+#main-content-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 100%;
+}
+
+#content-container-lower{
+    font-size:  0.7rem;
+    margin-left: 20px;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    /* margin-top: 30px; */
+}
+
+
+.items {
+    padding: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    width: 140px;
+    justify-content: flex-start;
+    margin: 5px;
+}
+.items:hover:not(#logo, #exit){
+    background-color: #c2c2c2;
+    border-radius: 10px;
+    color: white;
+}
+
+
+#exit fa-icon{
+    color: #b40000d2;
+}
+#exit a{
+    color: #b40000d2;
+}
+
+#exit:hover .items-text-container a, #exit:hover fa-icon {
+    color: white; /* Change this to the desired text color */
+}
+
+#exit:hover  {
+    background-color: #930202c5;
+    border-radius: 10px;
+}
+
+fa-icon {
+    color: black;
+    font-weight: bold;
+    padding: 1px;
+    margin-right: 4px;
+}
+
+.items div {
+    margin-left: 3px;
+    
+}
+.items-text-container {
+    display: flex;
+    justify-content: flex-start;
+    width: 50px;
+}
+#logo {
+    font-size: 1.2rem;
+    position: absolute;
+}
+#logo::after{
+    color: black;
+    position: relative;
+    font-size: 0.8rem;
+    content: "Automation";
+    font-weight: bolder;
+    top: 18px;
+    right: 30px;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}

@@ -1,0 +1,237 @@
+.card {
+    height: 130px;
+    width: 250px;
+    border-radius: 8px;
+}
+.value {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.card fa-icon {
+    font-size: 2rem;
+    color: #2195f393;
+    
+
+}
+#devices-info{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    top: 70px;
+    left: 60px;
+    padding: 10px;
+    background-color: #fb9a9a4f;
+    font-size: 0.7rem;
+}
+.value-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.card-info {
+    flex-direction: column;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+#interfaces-info {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    top: -60px;
+    left: 400px;
+    padding: 10px;
+    background-color: #63f9525b;
+    font-size: 0.7rem;
+}
+
+.sliding-points{
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+}
+.card .point {
+    background-color: #2195f33c;
+    height: 5px;
+    width: 5px;
+    border-radius: 50%;
+}
+.card .point:first-child {
+    background-color: #0a29f0;
+}
+
+.card:hover .point:first-child {
+    animation: point-swap1 15s infinite;
+    
+}
+.card:hover .point:nth-child(2) {
+    animation: point-swap2 15s infinite ;
+}
+.card:hover .point:nth-child(3) {
+    animation: point-swap3 15s infinite ;
+}
+
+
+
+.card:hover:not(#error-info) .value-info:nth-of-type(1){
+    animation: slide1 15s infinite;
+}
+.value-info:nth-of-type(2){
+    position: absolute;
+    opacity: 0;
+    top: 65px;
+    left: -1px;
+    animation: slide2 15s infinite;
+}
+.value-info:nth-of-type(3){
+    position: absolute;
+    top: 65px;
+    left: -1px;
+    opacity: 0;
+    /* background: blue; */
+    animation: slide3 15s infinite;
+}
+
+
+
+@keyframes slide1 {
+    0% {
+        opacity: 1;
+    }
+    33% {
+        transform: translateX(180px);
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+
+@keyframes slide2 {
+    0% {
+        opacity: 0;
+    }
+    30% {
+        opacity: 0;
+    }
+    33%{
+        transform: translateX(10px);
+        opacity: 1;
+    }
+    66%{
+        transform: translateX(180px);
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes slide3 {
+    0% {
+        opacity: 0;
+    }
+    63% {
+        opacity: 0;
+    }
+    66%{
+        transform: translateX(10px);
+        opacity: 1;
+    }
+    100%{
+        transform: translateX(180px);
+        opacity: 0;
+    }
+
+}
+
+@keyframes point-swap1 {
+    0% {
+        
+        background-color: #0a29f0;
+    }
+    33% {
+        background-color: #2195f33c;
+    }
+    100% {
+        background-color: #2195f33c;
+    }
+}
+
+@keyframes point-swap2 {
+    0% {
+        background-color: #2195f33c;
+    }
+    33% {
+        background-color: #0a29f0;
+    }
+    66% {
+        background-color: #2195f33c;
+    }
+    100% {
+        background-color: #2195f33c;
+    }
+}
+
+@keyframes point-swap3 {
+    0% {
+        background-color: #2195f33c;
+    }
+    33% {
+        background-color: #2195f33c;
+    }
+    66% {
+        background-color: #0a29f0;
+    }
+    100% {
+        background-color: #0a29f0;
+    }
+}
+.card:not(:hover) .point,
+.card:not(:hover) .value-info {
+  animation: none;
+}
+
+#chart {
+    position: absolute;
+    top: 300px;
+    width: 1100px;
+    left: 300px;
+}
+
+input {
+    margin-top: 0rem;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+    height: fit-content;
+    resize: none;
+    position: absolute;
+    left: 1180px;
+    top:  230px
+}
+
+
+input:focus {
+    border-color: #007bff;
+}
+#error-info{
+    position: absolute;
+    background-color: rgba(255, 0, 0, 0.2); /* Reddish background with 20% opacity */
+    color: black; /* Text color */
+    padding: 10px; /* Add padding for better spacing */
+    border: 1px solid #ccc;
+    left: 900px;
+    top: 140px;
+    font-size: 0.7rem;
+    display: flex;
+    justify-content: space-between;
+
+}

@@ -1,0 +1,19 @@
+<div class="form-container">
+    <form [formGroup]='deviceForm' (ngSubmit)="onSubmit()">
+        <div class="form-splitter">
+            <div class="form-field">
+                <label for="hostname">hostname:</label>
+                <input type="text" id="hostname" formControlName="hostname">
+            </div>
+            <div class="form-field">
+                <label for="vendor">Vendor:</label>
+                <input type="text" id="vendor" formControlName="vendor">
+            </div>
+            <div class="form-field">
+                <label for="type">type:</label>
+                <input type="text" id="type" formControlName="device_type">
+            </div>
+        </div>
+        <button type="submit">Submit</button>
+    </form>
+</div>

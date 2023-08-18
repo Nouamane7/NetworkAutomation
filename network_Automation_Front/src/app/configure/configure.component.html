@@ -1,0 +1,98 @@
+<div class="conf-container">
+    <h1>Configuration</h1>
+    <div class="split">
+        <div class="info-container">
+            <div>
+                <p>put each ip address on a line</p>
+                <textarea name="ip-values" id="" cols="30" rows="8">{{ips}}</textarea>
+            </div>
+            <div class="list-container">
+                <div>
+                <p>Choose a protocol to configurate</p>
+                <input list="protocols" id="list-protocls" (change)="onChange($event)">
+                    <datalist id="protocols">
+                        <option *ngFor="let protocol of protocols" [value]="protocol">
+                    </datalist>
+                </div>
+            </div>
+            <div>
+                <p>Output</p>
+                <textarea name="output" id="output" cols="90" rows="40">{{output}}</textarea>
+            </div>
+        </div>
+        <div id="options">
+            <div *ngIf="currProtocol === 'ospf'">
+                <form [formGroup]="protocolsForm" (ngSubmit)="onSubmitOspf()">
+                    <div>
+                        <p>network_statements</p>
+                        <textarea name="ip-values" id="" cols="40" rows="8" formControlName="network_statements"></textarea>
+                    </div>
+                    <div class="flex-button">
+                        <div>
+                            <p>ospf_process_id</p>
+                            <input type="number" formControlName="process_id">
+                        </div>
+                        <button *ngIf="!configuring" type="submit">Start Configuration</button>
+                        <div *ngIf="configuring" class="loading-circle loading-circle-pos"></div>
+                    </div>
+                </form>
+            </div>
+            <div *ngIf="currProtocol === 'eigrp'">
+                <form [formGroup]="protocolsForm" (ngSubmit)="onSubmitEigrp()">
+                    <div>
+                        <p>network_statements</p>
+                        <textarea name="ip-values" id="" cols="40" rows="8" formControlName="network_statements"></textarea>
+                    </div>
+                    <div class="flex-button">
+                        <div>
+                            <p>As number</p>
+                            <input type="number" formControlName="process_id">
+                        </div>
+                        <button *ngIf="!configuring" type="submit">Start Configuration</button>
+                        <div *ngIf="configuring" class="loading-circle loading-circle-pos"></div>
+                    </div>
+                </form>
+            </div>
+            <div *ngIf="currProtocol === 'bgp'">
+                <form [formGroup]="protocolsForm" (ngSubmit)="onSubmitBgp()">
+                    <div>
+                        <p>network_statements</p>
+                        <textarea name="ip-values" id="" cols="40" rows="8" formControlName="network_statements"></textarea>
+                    </div>
+                    <div class="flex-button">
+                        <div>
+                            <p>As number</p>
+                            <input type="number" formControlName="process_id">
+                        </div>
+                        <button *ngIf="!configuring" type="submit">Start Configuration</button>
+                        <div *ngIf="configuring" class="loading-circle loading-circle-pos"></div>
+                    </div>
+                </form>
+            </div>
+            <div *ngIf="currProtocol === 'rip'">
+                <form [formGroup]="ripForm" (ngSubmit)="onSubmitRip()">
+                    <div>
+                        <p>network_statements</p>
+                        <textarea name="ip-values" id="" cols="40" rows="8" formControlName="network_statements"></textarea>
+                    </div>
+                    <div class="flex-button-rip">
+                        <button *ngIf="!configuring" type="submit">Start Configuration</button>
+                        <div *ngIf="configuring" class="loading-circle loading-circle-pos"></div>
+                    </div>
+                </form>
+            </div>
+            <div *ngIf="currProtocol === 'static'">
+                <form [formGroup]="ripForm" (ngSubmit)="onSubmitStatic()">
+                    <div>
+                        <p>network_statements</p>
+                        <textarea name="ip-values" id="" cols="40" rows="8" formControlName="network_statements"></textarea>
+                    </div>
+                    <div class="flex-button-rip">
+                        <button *ngIf="!configuring" type="submit">Start Configuration</button>
+                        <div *ngIf="configuring" class="loading-circle loading-circle-pos"></div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

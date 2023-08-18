@@ -1,0 +1,28 @@
+<div id="inventory-container">
+    <!-- slider-list.component.html -->
+    <div class="title">
+        <input type="checkbox">
+        <fa-icon [icon]="faRefresh" id="refresh"></fa-icon>
+        <span style="margin-right: 33px;">ip Address</span>
+        <span style="margin-right: 12px;">Interface</span>
+        <span style="padding-left: 25px; margin-right: 52px;">Device</span>
+        <span style=" margin-right: 67px;">Status</span>
+        <span style="padding-left: 10px;">Last Update</span>
+    </div>    
+    <div class="flex-items" *ngFor="let interface of interfaces">
+        <input [id]="'checkbox-'+interface.ip_address" type="checkbox" class="select" (change)="onCheckboxChange($event)">
+        <div [class]="'fav-container ' +ischecked"><fa-icon [icon]="faStar" class="fav"></fa-icon></div>
+        <a [routerLink]="'/interface/' +interface.ip_address">
+            <span> {{interface.ip_address}}</span>
+            <span> {{interface.name}}</span>
+            <span> Cisco</span>
+            <span> {{interface.status}}</span>
+            <span> {{interface.update| date:"yyyy-MM-dd HH:mm:ss"}}</span>
+        </a>
+    </div>
+</div>
+<div class="button-flex">
+    <button (click)="onConfigure()">Configure</button>
+    <button routerLink="/add-interface">Add</button>
+    <button (click)="deleteInterfaces()">Delete</button>
+</div>

@@ -1,0 +1,21 @@
+<div id="backup-container-flex">
+    
+    <div id="backup-container">
+        <h2>Backup Files</h2>
+        <form (ngSubmit)="generateFile()">
+            <div *ngIf="!generated; else generatedBlock">
+                <input type="text" name="hostnames" id="hostnames" [(ngModel)]="hostnames">
+                <div *ngIf="!generating; else elseBlock">
+                    <button id="generate-button" type="submit">Generate Zip File</button>
+                </div>
+                <ng-template #elseBlock>
+                    <div class="loading-circle loading-circle-pos"></div>
+                </ng-template>
+            </div>
+            <ng-template #generatedBlock>
+                <!-- <img src="../zip-1472.png" style="width: auto; height: 128px;" alt="img"> -->
+                <button type="button" id="download-button" (click)="downloadZip()">Download</button>
+            </ng-template>
+        </form>
+    </div>
+</div>

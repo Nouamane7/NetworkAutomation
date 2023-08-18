@@ -1,0 +1,74 @@
+#backup-container-flex{
+    /* background-color: red; */
+    position: absolute;
+    width: 88%;
+    height: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#backup-container{
+    padding: 20px;
+    /* background-color: blue; */
+    width: 1000px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    padding-top: 100px;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+form{
+    margin-top: 10px;
+    /* display: flex; */
+    margin-left: 150px;
+    
+}
+input {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+    margin-right: 5px;
+    width: 300px;
+    position: absolute;
+    left: 520px;
+}
+
+input:focus {
+    border-color: #007bff;
+}
+
+
+button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    align-self: flex-end;
+}
+#generate-button{
+    position: absolute;
+    left: 850px;
+}
+
+#download-button {
+    position: absolute;
+    left: 625px;
+    top: 500px;
+}
+
+button:hover {
+    filter:  brightness(0.9);
+}
+
+.loading-circle-pos {
+    position: absolute;
+    left: 850px;
+}

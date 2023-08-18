@@ -1,0 +1,20 @@
+<div class="details-container">
+    <h2>Interface Details</h2>
+    <div class="separate-info-flex">
+    <!-- First half -->
+        <div class="info-half">
+            <div *ngFor="let info of interfaceDetails.slice(0, 10)" class="interface-info">
+            <label [for]="info.id">{{ info.label }}:</label>
+            <input [id]="info.id" [(ngModel)]="info.value" readonly="true">
+            </div>
+        </div>
+        <!-- Second half -->
+        <div class="info-half">
+            <div *ngFor="let info of interfaceDetails.slice(10)" class="interface-info">
+            <label [for]="info.id">{{ info.label }}:</label>
+            <input [id]="info.id" [(ngModel)]="info.value" readonly="true">
+            </div>
+        </div>
+    </div>
+
+</div>

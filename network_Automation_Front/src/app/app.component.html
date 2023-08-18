@@ -1,0 +1,10 @@
+<div id="search-bar-flex">
+  <app-search-bar *ngIf="connected"></app-search-bar>
+  <div id="app-container">
+      <app-nav-bar *ngIf="connected"></app-nav-bar>
+      <router-outlet></router-outlet>
+  </div>
+  
+
+</div>
+

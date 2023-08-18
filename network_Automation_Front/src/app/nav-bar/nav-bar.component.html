@@ -1,0 +1,23 @@
+<div id="nav-bar-container">
+    <div id="content-container">
+        <div id="main-content-container">
+            <div id="content-container-upper">
+                <div class="items"><fa-icon [icon]="faChart"></fa-icon><div class="items-text-container"><a routerLink="">Dashboard</a></div></div>
+                <div class="items"><fa-icon [icon]="faServer"></fa-icon><div class="items-text-container"><a routerLink="inventory">Inventory</a></div></div>
+                <div class="items"><fa-icon [icon]="faPython"></fa-icon><div class="items-text-container"><a routerLink="configure">Configure</a></div></div>
+                <div class="items"><fa-icon [icon]="faCloud"></fa-icon><div class="items-text-container"><a routerLink="backup">Backup</a></div></div>
+                <div class="items"><fa-icon [icon]="faSettings"></fa-icon><div class="items-text-container"><a>Settings</a></div></div>
+            </div>
+            <div id="content-container-middle">
+                <div id="exit" class="items"><fa-icon [icon]="faExit"></fa-icon><div class="items-text-container" (click)="exit()"><a routerLink="/login">Exit</a></div></div>
+            </div>
+        </div>
+        <div id="content-container-lower">
+            <ul>
+                <li><a>About</a></li>
+                <li><a href="">Contact</a></li>
+                <li><a href="">Help</a></li>
+            </ul>
+        </div>
+    </div>
+</div>

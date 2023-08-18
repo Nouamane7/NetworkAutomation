@@ -1,0 +1,47 @@
+.details-container {
+    position: relative;
+    /* top: 30px; */
+    margin-top: 30px;
+    left: 100px;
+    margin: 0 auto;
+    padding: 20px;
+    width: 1000px;
+}
+h2 {
+    margin-bottom: 30px;
+}
+.interface-info {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+}
+.separate-info-flex {
+    display: flex;
+    justify-content: space-between;
+}
+.label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    margin-right: 10px;
+}
+input{
+    text-align: right;
+
+}
+input {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+}
+
+
+input:focus {
+    border-color: #007bff;
+}
+

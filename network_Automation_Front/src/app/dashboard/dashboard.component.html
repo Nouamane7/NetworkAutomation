@@ -1,0 +1,46 @@
+<div class="card" id="devices-info">
+    <div class="card-info">
+        <fa-icon [icon]="faHardDrive"></fa-icon>
+        <div class="value-info" *ngFor="let device of devices" >
+            <p class="value">{{device.value}}</p>
+            <p>{{device.text}}</p>
+        </div>
+    </div>
+    <div class="sliding-points">
+        <div class="point"></div>
+        <div class="point"></div>
+        <div class="point"></div>
+    </div>
+</div>
+<input list="devices" id="devices_list" (change)="onChange($event)">
+<datalist id="devices">
+    <option *ngFor="let device of devices_hostname" [value]="device">
+</datalist>
+<div class="card" id="error-info">
+    <div class="card-info">
+        <fa-icon [icon]="faHardDrive"></fa-icon>
+        <div class="value-info">
+            <div class="card-content">
+                <p class="value">{{average}}%</p>
+                <p>Average Cpu Usage</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="card" id="interfaces-info">
+    <div class="card-info">
+        <fa-icon [icon]="faSiteMap"></fa-icon>
+        <div class="value-info"  *ngFor="let interface of interfaces" >
+            <div class="card-content">
+                <p class="value">{{interface.value}}</p>
+                <p>{{interface.text}}</p>
+            </div>
+        </div>
+    </div>
+    <div class="sliding-points">
+        <div class="point"></div>
+        <div class="point"></div>
+        <div class="point"></div>
+    </div>
+</div>
+<div id="chart" [chart]="chart"></div>
